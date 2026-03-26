@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | QZ Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; }
+        
+        /* Navbar */
+        nav { background: var(--card); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+        .user-info { font-size: 14px; color: #94a3b8; }
+
+        /* Welcome Section */
+        .welcome { text-align: center; padding: 50px 20px; }
+        .welcome h1 { font-size: 32px; margin-bottom: 10px; }
+        .welcome p { color: #94a3b8; }
+
+        /* Grid System */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto 50px auto; padding: 0 20px; }
+        
+        .option-card { background: var(--card); padding: 40px 20px; border-radius: 15px; text-align: center; transition: 0.3s; cursor: pointer; border: 1px solid transparent; text-decoration: none; color: white; }
+        .option-card:hover { border-color: var(--primary); transform: translateY(-10px); background: #2d3748; }
+        
+        .option-card i { font-size: 50px; color: var(--primary); margin-bottom: 20px; }
+        .option-card h3 { font-size: 22px; margin-bottom: 15px; }
+        .option-card p { font-size: 14px; color: #cbd5e1; line-height: 1.6; }
+
+        .badge { background: #ef4444; color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; position: absolute; top: 10px; right: 10px; }
+        .relative { position: relative; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">QZ</div>
+    <div class="user-info"><i class="fas fa-user-circle"></i> Welcome, Player</div>
+</nav>
+
+<div class="welcome">
+    <h1>What would you like to do today?</h1>
+    <p>Select a service to proceed with your PUBG transaction.</p>
+</div>
+
+<div class="grid-container">
+    <a href="sell-id.html" class="option-card">
+        <i class="fas fa-file-export"></i>
+        <h3>Sell My ID</h3>
+        <p>Upload your ID details and video. Get the best market price from our Admin.</p>
+    </a>
+
+    <a href="buy-store.html" class="option-card relative">
+        <span class="badge">Hot</span>
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Buy ID Store</h3>
+        <p>Browse verified high-level accounts with rare skins and outfits.</p>
+    </a>
+
+    <a href="uc-topup.html" class="option-card">
+        <i class="fas fa-coins"></i>
+        <h3>UC Top-up</h3>
+        <p>Instant UC transfer to your game character. Safe and cheap rates.</p>
+    </a>
+</div>
+
+</body>
+</html>

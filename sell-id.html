@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell PUBG ID | QZ Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        .form-container { max-width: 600px; margin: 40px auto; background: var(--card); padding: 30px; border-radius: 15px; border: 1px solid #334155; }
+        h2 { color: var(--primary); text-align: center; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
+        .file-upload { border: 2px dashed var(--primary); padding: 20px; text-align: center; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .file-upload:hover { background: rgba(250, 204, 21, 0.1); }
+        .btn-submit { width: 100%; background: var(--primary); color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        .admin-note { font-size: 12px; color: #94a3b8; margin-top: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2><i class="fas fa-upload"></i> List Your PUBG ID</h2>
+    
+    <form action="#" id="sellForm">
+        <div class="input-group">
+            <label>Character ID (Number)</label>
+            <input type="text" placeholder="e.g. 512345678" required>
+        </div>
+
+        <div class="input-group">
+            <label>Account Level</label>
+            <input type="number" placeholder="e.g. 75" required>
+        </div>
+
+        <div class="input-group">
+            <label>Rare Outfits / Skins (Short Description)</label>
+            <textarea rows="3" placeholder="M416 Glacier Max, Mummy Set, etc."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Your WhatsApp Number</label>
+            <input type="tel" placeholder="+92 3XX XXXXXXX" required>
+            <p style="font-size: 11px; color: #facc15;">* Only Admin can see this number for deal verification.</p>
+        </div>
+
+        <div class="input-group">
+            <label>Upload ID Full Video (Required)</label>
+            <div class="file-upload" onclick="document.getElementById('videoFile').click()">
+                <i class="fas fa-video" style="font-size: 30px; margin-bottom: 10px;"></i>
+                <p>Click to Select Video Walkthrough</p>
+                <input type="file" id="videoFile" accept="video/*" style="display:none;" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Your Expected Price (PKR)</label>
+            <input type="number" placeholder="Enter your price" required>
+        </div>
+
+        <button type="submit" class="btn-submit">SUBMIT TO ADMIN FOR REVIEW</button>
+        <p class="admin-note">Once submitted, Admin will verify your ID and list it in the store after adding a small service fee.</p>
+    </form>
+</div>
+
+</body>
+</html>

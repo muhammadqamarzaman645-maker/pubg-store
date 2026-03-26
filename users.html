@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users | Admin Panel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --success: #22c55e; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; display: flex; }
+        
+        /* Sidebar Styles */
+        .sidebar { width: 250px; height: 100vh; background: var(--card); border-right: 2px solid var(--primary); padding: 20px; position: fixed; }
+        .sidebar h2 { color: var(--primary); font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
+        .nav-link { display: block; padding: 12px; color: #94a3b8; text-decoration: none; border-radius: 8px; margin-bottom: 10px; transition: 0.3s; }
+        .nav-link:hover { background: rgba(250, 204, 21, 0.1); color: var(--primary); }
+        .nav-link.active { background: var(--primary); color: #000; font-weight: bold; }
+
+        /* Main Content Styles */
+        .main-content { margin-left: 270px; padding: 30px; width: calc(100% - 270px); }
+        h2 { color: var(--primary); margin-bottom: 30px; }
+        
+        table { width: 100%; background: var(--card); border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px rgba(0,0,0,0.3); }
+        th { background: #334155; text-align: left; padding: 15px; color: var(--primary); text-transform: uppercase; font-size: 13px; }
+        td { padding: 15px; border-bottom: 1px solid #334155; font-size: 14px; }
+        
+        .whatsapp-tag { color: #22c55e; font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        .whatsapp-tag:hover { text-decoration: underline; }
+        
+        .action-btn { padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-size: 12px; font-weight: bold; background: #ef4444; color: white; transition: 0.3s; }
+        .action-btn:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>ADMIN PANEL</h2>
+    <a href="admin-panel.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="pending.html" class="nav-link"><i class="fas fa-id-card"></i> Pending Approvals</a>
+    <a href="users.html" class="nav-link active"><i class="fas fa-users"></i> Registered Users</a>
+    <a href="deals.html" class="nav-link"><i class="fas fa-history"></i> Completed Deals</a>
+</div>
+<div class="main-content">
+    <h2><i class="fas fa-users"></i> Registered Members</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Join Date</th>
+                <th>WhatsApp (Secret)</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Muhammad Ahmed</td>
+                <td>March 25, 2026</td>
+                <td>
+                    <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-tag">
+                        <i class="fab fa-whatsapp"></i> +92 300 1234567
+                    </a>
+                </td>
+                <td><span style="color: #22c55e;">● Online</span></td>
+                <td><button class="action-btn">Block User</button></td>
+            </tr>
+            </tbody>
+    </table>
+</div>
+
+</body>
+</html>

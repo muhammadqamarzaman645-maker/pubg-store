@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | QZ Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --success: #22c55e; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; display: flex; }
+        
+        /* Sidebar */
+        .sidebar { width: 250px; height: 100vh; background: var(--card); border-right: 2px solid var(--primary); padding: 20px; position: fixed; }
+        .sidebar h2 { color: var(--primary); font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
+        .nav-link { display: block; padding: 12px; color: #94a3b8; text-decoration: none; border-radius: 8px; margin-bottom: 10px; }
+        .nav-link.active { background: var(--primary); color: #000; font-weight: bold; }
+
+        /* Main Content */
+        .main-content { margin-left: 270px; padding: 30px; width: 100%; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: var(--card); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); }
+        
+        /* Table Design */
+        table { width: 100%; background: var(--card); border-collapse: collapse; border-radius: 12px; overflow: hidden; }
+        th { background: #334155; text-align: left; padding: 15px; color: var(--primary); }
+        td { padding: 15px; border-bottom: 1px solid #334155; font-size: 14px; }
+        
+        .action-btn { padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-size: 12px; font-weight: bold; }
+        .btn-approve { background: var(--success); color: white; margin-right: 5px; }
+        .btn-view { background: var(--primary); color: #000; }
+        .whatsapp-tag { color: #22c55e; font-weight: bold; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>ADMIN PANEL</h2>
+    <a href="admin-panel.html" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="pending.html" class="nav-link"><i class="fas fa-id-card"></i> Pending Approvals</a>
+    <a href="users.html" class="nav-link"><i class="fas fa-users"></i> Registered Users</a>
+    <a href="deals.html" class="nav-link"><i class="fas fa-history"></i> Completed Deals</a>
+</div>
+<div class="main-content">
+    <div class="stats-grid">
+        <div class="stat-card"><h3>12</h3><p>New Requests</p></div>
+        <div class="stat-card"><h3>Rs. 15,400</h3><p>Total Profit</p></div>
+        <div class="stat-card"><h3>145</h3><p>Active Users</p></div>
+    </div>
+
+    <h2>Pending ID Submissions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Details</th>
+                <th>Seller Price</th>
+                <th>WhatsApp (Secret)</th>
+                <th>Video</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PUBG LVL 75 | Glacier Max</td>
+                <td>Rs. 40,000</td>
+                <td><a href="https://wa.me/923000000000" class="whatsapp-tag">+92 300 0000000</a></td>
+                <td><button class="action-btn btn-view">Watch Video</button></td>
+                <td>
+                    <button class="action-btn btn-approve">APPROVE (Add +5000 Profit)</button>
+                    <button class="action-btn btn-view" style="background: #ef4444; color:white;">REJECT</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

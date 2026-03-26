@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | QZ Store</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .reg-card { background: #1e293b; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); width: 350px; border-top: 5px solid #facc15; }
+        h2 { text-align: center; color: #facc15; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-size: 14px; }
+        input { width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
+        .btn-reg { width: 100%; background: #facc15; color: #000; padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .btn-reg:hover { background: #eab308; }
+        p { text-align: center; font-size: 13px; color: #94a3b8; }
+        a { color: #facc15; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="reg-card">
+    <h2>create account</h2>
+    <form action="#" id="registerForm">
+        <div class="form-group">
+            <label>full names</label>
+            <input type="text" placeholder="type you name" required>
+        </div>
+        <div class="form-group">
+            <label>WhatsApp Number (Secret)</label>
+            <input type="tel" placeholder="+92 300 1234567" required>
+            <small style="font-size: 10px; color: #facc15;">*only admin can see it.</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="create password" required>
+        </div>
+        <button type="submit" class="btn-reg">REGISTER NOW</button>
+    </form>
+    <p>Already have Account  <a href="login.html">Login NOW</a></p>
+</div>
+
+</body>
+</html>
