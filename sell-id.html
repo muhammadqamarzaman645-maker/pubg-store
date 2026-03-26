@@ -7,19 +7,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; }
         .form-container { max-width: 600px; margin: 40px auto; background: var(--card); padding: 30px; border-radius: 15px; border: 1px solid #334155; }
         h2 { color: var(--primary); text-align: center; margin-bottom: 30px; }
         .input-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
         input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
-        .file-upload { border: 2px dashed var(--primary); padding: 20px; text-align: center; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        
+        /* Video Upload Box Styling */
+        .file-upload { border: 2px dashed var(--primary); padding: 30px; text-align: center; border-radius: 8px; cursor: pointer; transition: 0.3s; background: #0f172a; }
         .file-upload:hover { background: rgba(250, 204, 21, 0.1); }
-        .btn-submit { width: 100%; background: var(--primary); color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        .file-upload i { font-size: 40px; color: var(--primary); margin-bottom: 10px; }
+        #fileNameDisplay { color: #94a3b8; font-size: 14px; margin-top: 10px; }
+
+        .btn-submit { width: 100%; background: var(--primary); color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px; transition: 0.3s; }
+        .btn-submit:hover { background: #eab308; }
         .admin-note { font-size: 12px; color: #94a3b8; margin-top: 10px; text-align: center; }
     </style>
 </head>
 <body>
+
 <nav style="background: #1e293b; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #facc15; position: sticky; top: 0; z-index: 1000;">
     <div style="font-size: 24px; font-weight: bold; color: #facc15; letter-spacing: 2px;">QZ STORE</div>
     <div style="display: flex; gap: 25px; align-items: center;">
@@ -29,6 +36,7 @@
         <a href="index.html" style="background: #ef4444; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold; transition: 0.3s;">LOGOUT</a>
     </div>
 </nav>
+
 <div class="form-container">
     <h2><i class="fas fa-upload"></i> List Your PUBG ID</h2>
     
@@ -57,9 +65,9 @@
         <div class="input-group">
             <label>Upload ID Full Video (Required)</label>
             <div class="file-upload" onclick="document.getElementById('videoFile').click()">
-                <i class="fas fa-video" style="font-size: 30px; margin-bottom: 10px;"></i>
-                <p>Click to Select Video Walkthrough</p>
-                <input type="file" id="videoFile" accept="video/*" style="display:none;" required>
+                <i class="fas fa-video"></i>
+                <p id="fileNameDisplay">Click to Select Video Walkthrough</p>
+                <input type="file" id="videoFile" accept="video/*" style="display:none;" required onchange="showFileName()">
             </div>
         </div>
 
@@ -68,10 +76,39 @@
             <input type="number" placeholder="Enter your price" required>
         </div>
 
-        <button type="submit" class="btn-submit">SUBMIT TO ADMIN FOR REVIEW</button>
+        <button type="submit" id="submitBtn" class="btn-submit">SUBMIT TO ADMIN FOR REVIEW</button>
         <p class="admin-note">Once submitted, Admin will verify your ID and list it in the store after adding a small service fee.</p>
     </form>
 </div>
+
+<script>
+    // 1. Video select hone par uska naam dikhane ke liye
+    function showFileName() {
+        const fileInput = document.getElementById('videoFile');
+        const display = document.getElementById('fileNameDisplay');
+        
+        if (fileInput.files.length > 0) {
+            display.innerText = "Selected: " + fileInput.files[0].name;
+            display.style.color = "#22c55e"; // Green color for success
+        }
+    }
+
+    // 2. Form submit hone par loading dikhane ke liye
+    document.getElementById('sellForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Page refresh hone se rokne ke liye
+        
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "Processing & Sending to QZ Admin...";
+        btn.style.background = "#94a3b8";
+        btn.disabled = true;
+
+        // Fake Delay (Jab tak backend nahi lagate tab tak ye 2 second wait karega)
+        setTimeout(() => {
+            alert("Success! Your ID Details and Video have been submitted to QZ Admin.");
+            window.location.href = "dashboard.html"; // Wapis dashboard par bhej dega
+        }, 2500);
+    });
+</script>
 
 </body>
 </html>
