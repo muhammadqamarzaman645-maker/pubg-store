@@ -3,66 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pending Approvals | Admin Panel</title>
+    <title>Pending Approvals | QZ Admin</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --success: #22c55e; }
+        :root { --primary: #facc15; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; }
         body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; display: flex; }
         .sidebar { width: 250px; height: 100vh; background: var(--card); border-right: 2px solid var(--primary); padding: 20px; position: fixed; }
-        .sidebar h2 { color: var(--primary); font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
-        .nav-link { display: block; padding: 12px; color: #94a3b8; text-decoration: none; border-radius: 8px; margin-bottom: 10px; }
-        .nav-link.active { background: var(--primary); color: #000; font-weight: bold; }
-        .main-content { margin-left: 270px; padding: 30px; width: calc(100% - 270px); }
-        h2 { color: var(--primary); margin-bottom: 30px; }
-        table { width: 100%; background: var(--card); border-collapse: collapse; border-radius: 12px; overflow: hidden; }
-        th { background: #334155; text-align: left; padding: 15px; color: var(--primary); text-transform: uppercase; font-size: 13px; }
-        td { padding: 15px; border-bottom: 1px solid #334155; font-size: 14px; }
-        .action-btn { padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-size: 12px; font-weight: bold; transition: 0.3s; }
-        .btn-approve { background: var(--success); color: white; margin-right: 5px; }
-        .btn-view { background: var(--primary); color: #000; margin-right: 5px; }
-        .btn-reject { background: #ef4444; color: white; }
+        .main-content { margin-left: 270px; padding: 30px; width: 100%; }
+        table { width: 100%; background: var(--card); border-radius: 12px; overflow: hidden; border-collapse: collapse; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #334155; }
+        th { color: var(--primary); background: #334155; }
+        .action-btn { padding: 8px 12px; border-radius: 5px; border: none; font-weight: bold; cursor: pointer; font-size: 12px; }
+        .btn-watch { background: #3b82f6; color: white; }
+        .btn-approve { background: #22c55e; color: white; }
     </style>
 </head>
 <body>
-<nav style="background: #1e293b; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #facc15; position: sticky; top: 0; z-index: 1000;">
-    <div style="font-size: 24px; font-weight: bold; color: #facc15; letter-spacing: 2px;">QZ STORE</div>
-    <div style="display: flex; gap: 20px; align-items: center;">
-        <a href="dashboard.html" style="color: white; text-decoration: none; font-size: 14px;">Dashboard</a>
-        <a href="buy-store.html" style="color: white; text-decoration: none; font-size: 14px;">Buy ID</a>
-        <a href="sell-id.html" style="color: white; text-decoration: none; font-size: 14px;">Sell ID</a>
-        <a href="index.html" style="background: #ef4444; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 12px; font-weight: bold;">LOGOUT</a>
-    </div>
-</nav>
+
 <div class="sidebar">
-    <h2>ADMIN PANEL</h2>
-    <a href="admin-panel.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
-    <a href="pending.html" class="nav-link active"><i class="fas fa-id-card"></i> Pending Approvals</a>
-    <a href="users.html" class="nav-link"><i class="fas fa-users"></i> Registered Users</a>
-    <a href="deals.html" class="nav-link"><i class="fas fa-history"></i> Completed Deals</a>
+    <h2 style="color: var(--primary);">QZ ADMIN</h2>
+    <hr border="1" color="#334155">
+    <br>
+    <a href="admin-panel.html" style="color: white; text-decoration: none; display: block; margin-bottom: 15px;">Dashboard</a>
+    <a href="pending.html" style="color: var(--primary); text-decoration: none; display: block; margin-bottom: 15px; font-weight: bold;">Pending Approvals</a>
+    <a href="users.html" style="color: white; text-decoration: none; display: block; margin-bottom: 15px;">Users</a>
 </div>
 
 <div class="main-content">
-    <h2><i class="fas fa-clock"></i> New Requests for Approval</h2>
+    <h2>Pending Submissions</h2>
     <table>
         <thead>
             <tr>
-                <th>Submission Date</th>
                 <th>Seller WhatsApp</th>
-                <th>ID Details</th>
-                <th>Seller Price</th>
-                <th>Action</th>
+                <th>Price</th>
+                <th>Proof Video</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>March 26, 2026</td>
-                <td><a href="https://wa.me/923000000000" style="color:#22c55e; font-weight:bold;">+92 300 0000000</a></td>
-                <td>Lvl 75 | M416 Glacier Max</td>
-                <td>Rs. 35,000</td>
+                <td><a href="#" style="color:#22c55e;">+92 300 1234567</a></td>
+                <td>Rs. 30,000</td>
                 <td>
-                    <button class="action-btn btn-view">Review Video</button>
-                    <button class="action-btn btn-approve">Approve & Live</button>
-                    <button class="action-btn btn-reject">Reject</button>
+                    <button class="action-btn btn-watch" onclick="alert('Playing Seller ID Video...')">
+                        <i class="fas fa-eye"></i> WATCH VIDEO
+                    </button>
+                </td>
+                <td>
+                    <button class="action-btn btn-approve">APPROVE</button>
+                    <button class="action-btn" style="background: #ef4444; color: white;">REJECT</button>
                 </td>
             </tr>
         </tbody>
